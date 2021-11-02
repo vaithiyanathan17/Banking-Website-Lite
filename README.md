@@ -1,6 +1,6 @@
 # Banking-Website-Lite
 --> Registeration form
-This is an signup page. 
+First is a signup page. 
 Then the second page shows the uploaded jpg  and your first name.
 Third comes the login page
 Fourth is the edit page
