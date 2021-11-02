@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LogIn</title>
+</head>
+<nav>
+    <a href="{{url_for('logout')}}"><input type="submit" value="Login"></a>
+</nav>
+<body>
+    <h1>Login</h1>
+    {% if alert!= ""%}
+        <h5>{{alert}}{{upd}}</h5>
+    {% endif%}
+    <form action="" method="post"  enctype="multipart/form-data">
+        <label for="Username"></label>
+        <h4>name</h4><input id="Username" type="text" name="USERNAME">
+
+        <label for="Password"></label>
+        <h4>Password</h4><input id="Password" type="password" name="PASSWORD">
+
+        <label for="Confirm_pass"></label>
+        <h4>Confirm Password</h4><input id="Confirm_pass" type="password" name="CONFIRM">
+
+        <label for="Email"></label>
+        <h4>Email</h4><input id="Email" type="text" name="EMAIL">
+
+        <label for="Phone_no"></label>
+        <h4>Phone number:</h4><input id="Phone_no" type="text" name="PHONE">
+
+        <label for="Address"></label>
+        <h4>Address</h4><input id="Address" type="address" name="ADDRESS">
+
+        <label for="Image"></label>
+        <h4>Image</h4><input id="Image" type="file" name="IMAGE">
+
+        <label for="DOB"></label>
+        <h4>DOB</h4><input id="DOB" type="date" name="DOB">
+        <div class="martial">
+            <h4>Marital</h4>
+            <label for="single">Single</label>
+                <input id="single" type="radio" name="MARITAL" required>
+            <label for="Married">Married</label>
+                <input id="Married" type="radio" name="MARITAL" required>
+        </div>
+        <label for="Saving"></label>
+        <h4>Account Type</h4>Saving Account<input id="Saving" class="Check" type="checkbox" name="SAVING" value="Saving" onclick="clicked(this)"><br>
+        <label for="Salary"></label>
+        Salary account<input id="Salary" class="Check" type="checkbox" name="SALARY" value="Salary" onclick="clicked(this)">
+        <div class="deposit">
+            <h4>Deposit</h4>
+            <label for="Deposit_1">10000</label>
+                <input id="Deposit_1" type="checkbox" name="DEPOSIT" value="10000" checked>
+
+
+            <label for="Deposit_2">15000</label>
+                <input id="Deposit_2" type="checkbox" name="DEPOSIT" value="15000">
+
+
+            <label for="Deposit_3">25000</label>
+                <input id="Deposit_3" type="checkbox" name="DEPOSIT" value="25000">
+        </div><br>
+
+
+
+
+        <a href="#"><input type="submit" value="Register" name="SUBMIT"></a>
+    </form>
+    <script>
+        function clicked(checkbox){
+            var getting = document.getElementsByClassName("Check")
+            if (Saving.checked){
+                Salary.checked=false
+            }
+            else{
+                Salary.checked=true
+            }
+        }
+    </script>
+</body>
+</html>

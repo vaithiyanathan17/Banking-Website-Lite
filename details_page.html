@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>details</title>
+</head>
+<nav>
+    <a href="{{url_for('logout')}}"><input type="submit" value="Logout"></a>
+</nav>
+<body>
+<h2><u>Personal Details</u></h2>
+
+    <form action="" method="post">
+        <input type="hidden" name="_method" value="PUT" >
+        <div id="details">
+            {% for i,j in det.items() %}
+                <h3><span id="Pass">{{i}}</span>: <span id="values">{{j}}</span></h3>
+            {% endfor %}
+        </div>
+        <input type="submit" value="save changes">
+
+    </form>
+    <a href={{url_for('type_acc')}}><input type="submit" value="confirm"></a>
+    <input type="submit" value="Edit" onclick="edit()">
+<script>
+        function edit(){
+            var name = document.getElementById('details').children;
+            var listvalue = []
+            for (let i=0;i<name.length;i++) {
+                listvalue.push(name[i].children[1].innerText);
+            }
+            var passvalue = []
+            for (let i=0;i<name.length;i++) {
+                passvalue.push(name[i].children[0].innerText);
+            }
+            console.log(listvalue);
+            console.log(passvalue);
+            for (let i=0;i<name.length;i++) {
+                name[i].children[1].innerHTML = "<input type='text' value='" + listvalue[i] + "' name='" + passvalue[i] + "'  >";
+
+                console.log(name[i].children[0].innerHTML)
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HomePage</title>
+</head>
+<nav>
+    <a href="{{url_for('logout')}}"><input type="submit" value="Logout"></a>
+</nav>
+<body>
+  <h3>{{usr}}</h3>
+  <img src="static/images/{{photo}}" alt="{{usr}}" width="200" height="200"><br>
+  <a href="/personal_Login"><input type="submit" value="CLICK HERE"></a>
+</body>
+</html>

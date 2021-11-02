@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fixed deposit</title>
+</head>
+<nav>
+    <a href="{{url_for('logout')}}"><input type="submit" value="Logout"></a>
+</nav>
+<body>
+  <h2>Available Balance Amount:  {{lst_deposit}}</h2>
+  <form action="" method="post">
+      Enter the amount to be utilized for FD: <input type="text" name="Amount"><br></br>
+      Percentage <input type="number" name="n_val" min="0" max="10"><br></br>
+      Years <input type="number" name="year" min="0" max="10"><br></br>
+      <input type="submit" value="Submit">
+      <div>
+          The total amount after {{year}} will be {{total}}
+      </div>
+  </form>
+</body>
+</html>
